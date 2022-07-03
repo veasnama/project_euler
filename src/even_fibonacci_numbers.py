@@ -13,16 +13,23 @@ def Fibonacci(num):
     else:
         return num;
 
-fab_even_sum = 0
-for n in range(1,100):
-    fib_num = Fibonacci(n)
-    if fib_num < 4000000:
-        if fib_num % 2 == 0:
-            fab_even_sum += fib_num
-        else:
-            print("Not even number") 
+
+def compute_sum(number_of_range):
+    if number_of_range <= 0:
+        print("Number must be positive") 
+
     else:
-        print("Condition is unmet")
-        break;
-         
-print(f"The result = {fab_even_sum}")
+        fab_even_sum = 0
+        for n in range(1,number_of_range):
+            fib_num = Fibonacci(n)
+            print(fib_num)
+            if fib_num < 4000000:
+                if fib_num % 2 == 0:
+                    fab_even_sum += fib_num
+                else:
+                    print("Not even number") 
+            else:
+                print("Condition is unmet")
+                break; 
+        print(f"The result = {fab_even_sum}")
+compute_sum(10)
